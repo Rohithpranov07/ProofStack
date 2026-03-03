@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Analyze Wizard - ProofStack</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1c74e9", // Google Blue
+                        "background-light": "#f6f7f8", // Light gray background
+                        "background-dark": "#111821", // Deep dark background
+                        "surface": "#ffffff",
+                        "surface-dark": "#1e293b", // Slate 800ish for dark mode cards
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                    boxShadow: {
+                        "card": "0 1px 2px 0 rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15)",
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen flex flex-col antialiased">
+<header class="bg-surface dark:bg-background-dark border-b border-slate-200 dark:border-slate-800 sticky top-0 z-50">
+<div class="px-6 py-3 flex items-center justify-between w-full max-w-[1440px] mx-auto">
+<div class="flex items-center gap-3">
+<div class="text-primary">
+<span class="material-symbols-outlined text-[28px] leading-none">verified_user</span>
+</div>
+<h2 class="text-xl font-medium tracking-tight text-slate-900 dark:text-white">ProofStack</h2>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-primary transition-colors" href="#">Dashboard</a>
+<a class="text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-primary transition-colors" href="#">History</a>
+<a class="text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-primary transition-colors" href="#">Settings</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="hidden sm:flex items-center justify-center h-9 px-4 rounded-full border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-[18px] mr-2">description</span>
+                Docs
+            </button>
+<div class="h-9 w-9 rounded-full bg-slate-200 dark:bg-slate-700 overflow-hidden cursor-pointer" data-alt="User profile avatar placeholder" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA-SnFXXXtFORZ1OcJpb2yWqO49McNpliPnDpO6K5kTzBgQP2jw1EhIfmWrcfVyoPh3SYK3yGHRLNC17BQEYQ_nbw1A3QDOh6bsqm_tqWX3wHm5ZPNnOqH-5sbpxo9RoNBT9yiwh8BGi-kPA5PLb_2QusK8_0qU2yG688ACFTyhnJMqx4-nO4Ei2v8nNB_eBg_BlprvnSfDjoI1sAYss4hVl9YURtXNbNHM9eA9gS92E43je6UpUh-wVPjsg7uGTfypY_hDPaHMi80s");'></div>
+</div>
+</div>
+</header>
+<main class="flex-1 flex flex-col items-center py-10 px-4 sm:px-6">
+<div class="w-full max-w-[720px] mb-6 flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
+<a class="hover:text-primary hover:underline" href="#">Projects</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<span class="text-slate-800 dark:text-slate-200 font-medium">New Analysis</span>
+</div>
+<div class="w-full max-w-[720px] bg-surface dark:bg-[#1e2329] rounded-xl shadow-card p-8 flex flex-col gap-8 border border-transparent dark:border-slate-700">
+<div class="text-center space-y-2">
+<h1 class="text-2xl font-normal text-slate-900 dark:text-white">Resume &amp; Skills</h1>
+<p class="text-slate-500 dark:text-slate-400">Upload a resume and list the candidate's skills.</p>
+</div>
+<div class="w-full px-4">
+<div class="relative flex items-center justify-between w-full">
+<div class="absolute left-0 top-[14px] w-full h-[1px] bg-slate-200 dark:bg-slate-700 -z-10"></div>
+<div class="absolute left-0 top-[14px] w-1/2 h-[1px] bg-primary -z-10 transition-all duration-300"></div>
+<div class="flex flex-col items-center gap-2 cursor-pointer group">
+<div class="flex items-center justify-center w-7 h-7 rounded-full bg-primary text-white text-xs font-medium ring-4 ring-surface dark:ring-[#1e2329]">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+<span class="text-[11px] font-medium text-primary uppercase tracking-wide">Profiles</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<div class="flex items-center justify-center w-7 h-7 rounded-full bg-primary text-white text-xs font-medium ring-4 ring-surface dark:ring-[#1e2329]">
+                        2
+                    </div>
+<span class="text-[11px] font-bold text-primary uppercase tracking-wide">Resume</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<div class="flex items-center justify-center w-7 h-7 rounded-full bg-surface dark:bg-[#1e2329] border border-slate-300 dark:border-slate-600 text-slate-500 dark:text-slate-400 text-xs font-medium ring-4 ring-surface dark:ring-[#1e2329]">
+                        3
+                    </div>
+<span class="text-[11px] font-medium text-slate-400 dark:text-slate-500 uppercase tracking-wide">Experience</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<div class="flex items-center justify-center w-7 h-7 rounded-full bg-surface dark:bg-[#1e2329] border border-slate-300 dark:border-slate-600 text-slate-500 dark:text-slate-400 text-xs font-medium ring-4 ring-surface dark:ring-[#1e2329]">
+                        4
+                    </div>
+<span class="text-[11px] font-medium text-slate-400 dark:text-slate-500 uppercase tracking-wide">Review</span>
+</div>
+</div>
+</div>
+<form class="space-y-8 mt-2">
+<div class="space-y-3">
+<label class="block text-sm font-medium text-slate-700 dark:text-slate-300">Resume Upload</label>
+<div class="relative group cursor-pointer">
+<input class="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10" type="file"/>
+<div class="w-full border-2 border-dashed border-slate-300 dark:border-slate-600 rounded-lg p-8 flex flex-col items-center justify-center gap-3 bg-slate-50 dark:bg-slate-800/50 group-hover:bg-slate-100 dark:group-hover:bg-slate-800 transition-colors group-hover:border-primary/50">
+<div class="p-3 bg-white dark:bg-slate-700 rounded-full shadow-sm">
+<span class="material-symbols-outlined text-slate-400 dark:text-slate-300 text-[24px]">cloud_upload</span>
+</div>
+<div class="text-center">
+<p class="text-sm text-slate-600 dark:text-slate-300">
+<span class="text-primary font-medium hover:underline">Click to browse</span> or drag file here
+                            </p>
+<p class="text-xs text-slate-400 dark:text-slate-500 mt-1">PDF, DOC, DOCX — max 10 MB</p>
+</div>
+</div>
+</div>
+</div>
+<div class="space-y-4">
+<div class="flex items-center justify-between">
+<label class="block text-sm font-medium text-slate-700 dark:text-slate-300">Skills</label>
+<button class="text-primary text-sm font-medium hover:text-blue-600 dark:hover:text-blue-400 flex items-center gap-1 py-1 px-2 rounded hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                        Add Skill
+                    </button>
+</div>
+<div class="space-y-3">
+<div class="grid grid-cols-12 gap-4 px-1">
+<div class="col-span-9 text-xs font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider">Skill Name</div>
+<div class="col-span-3 text-xs font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider">Years</div>
+</div>
+<div class="grid grid-cols-12 gap-4 items-start">
+<div class="col-span-9">
+<input class="block w-full rounded-md border-slate-300 shadow-sm focus:border-primary focus:ring-primary dark:bg-slate-900 dark:border-slate-600 dark:placeholder-slate-500 dark:text-white sm:text-sm py-2.5 px-3 transition-colors" placeholder="e.g. Python" type="text" value="Python"/>
+</div>
+<div class="col-span-3 relative">
+<input class="block w-full rounded-md border-slate-300 shadow-sm focus:border-primary focus:ring-primary dark:bg-slate-900 dark:border-slate-600 dark:placeholder-slate-500 dark:text-white sm:text-sm py-2.5 px-3 transition-colors text-center" max="50" min="0" placeholder="0" type="number" value="4"/>
+</div>
+</div>
+<div class="grid grid-cols-12 gap-4 items-start">
+<div class="col-span-9">
+<input class="block w-full rounded-md border-slate-300 shadow-sm focus:border-primary focus:ring-primary dark:bg-slate-900 dark:border-slate-600 dark:placeholder-slate-500 dark:text-white sm:text-sm py-2.5 px-3 transition-colors" placeholder="e.g. React" type="text" value="React.js"/>
+</div>
+<div class="col-span-3 relative flex items-center gap-2">
+<input class="block w-full rounded-md border-slate-300 shadow-sm focus:border-primary focus:ring-primary dark:bg-slate-900 dark:border-slate-600 dark:placeholder-slate-500 dark:text-white sm:text-sm py-2.5 px-3 transition-colors text-center" max="50" min="0" placeholder="0" type="number" value="2"/>
+<button class="text-slate-400 hover:text-red-500 transition-colors p-1" type="button">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-12 gap-4 items-start">
+<div class="col-span-9">
+<input class="block w-full rounded-md border-slate-300 shadow-sm focus:border-primary focus:ring-primary dark:bg-slate-900 dark:border-slate-600 dark:placeholder-slate-500 dark:text-white sm:text-sm py-2.5 px-3 transition-colors" placeholder="e.g. Docker" type="text"/>
+</div>
+<div class="col-span-3 relative flex items-center gap-2">
+<input class="block w-full rounded-md border-slate-300 shadow-sm focus:border-primary focus:ring-primary dark:bg-slate-900 dark:border-slate-600 dark:placeholder-slate-500 dark:text-white sm:text-sm py-2.5 px-3 transition-colors text-center" max="50" min="0" placeholder="0" type="number"/>
+<button class="text-slate-400 hover:text-red-500 transition-colors p-1 opacity-0 hover:opacity-100 group-hover:opacity-100" type="button">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</form>
+<div class="flex items-center justify-between pt-6 border-t border-slate-100 dark:border-slate-700 mt-2">
+<button class="px-6 py-2.5 rounded-full text-slate-600 dark:text-slate-300 font-medium text-sm border border-slate-200 dark:border-slate-600 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors" type="button">
+                Back
+            </button>
+<div class="flex gap-3">
+<button class="px-6 py-2.5 rounded-full bg-primary text-white font-medium text-sm shadow-sm hover:bg-blue-600 hover:shadow transition-all flex items-center gap-2" type="button">
+                    Continue
+                </button>
+</div>
+</div>
+</div>
+</main>
+
+</body></html>

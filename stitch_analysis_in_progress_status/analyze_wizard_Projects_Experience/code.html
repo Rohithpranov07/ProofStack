@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Analyze Wizard - Experience Step - ProofStack</title>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&amp;family=Google+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1A73E8", // Google Blue
+                        "primary-hover": "#1557B0",
+                        "background-light": "#FFFFFF", 
+                        "background-dark": "#131314", // AI Studio Dark
+                        "surface": "#FFFFFF",
+                        "surface-dark": "#1E1F20", // AI Studio Dark Surface
+                        "border-light": "#E0E0E0",
+                        "border-dark": "#444746",
+                        "text-secondary": "#5F6368",
+                        "text-secondary-dark": "#C4C7C5",
+                    },
+                    fontFamily: {
+                        "sans": ["Google Sans", "Open Sans", "sans-serif"],
+                        "display": ["Google Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "4px",
+                        "lg": "8px", 
+                        "xl": "12px",
+                        "2xl": "24px",
+                        "full": "9999px"
+                    },
+                    boxShadow: {
+                        "card": "0 1px 2px 0 rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15)",
+                        "elevation-1": "0 1px 3px 1px rgba(0,0,0,0.15), 0 1px 2px 0 rgba(0,0,0,0.3)",
+                    }
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        @layer base {
+            body {
+                @apply font-sans;
+            }
+        }
+        .form-input {
+            @apply block w-full rounded-lg border border-gray-300 dark:border-border-dark bg-transparent text-gray-900 dark:text-gray-100 px-4 py-3 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors;
+        }
+        .form-label {
+            @apply block text-sm font-medium text-gray-700 dark:text-text-secondary-dark mb-2;
+        }
+        .btn-outline {
+            @apply px-4 py-2 rounded-full border border-gray-300 dark:border-border-dark text-gray-700 dark:text-gray-200 text-sm font-medium hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors;
+        }
+        .btn-primary {
+            @apply px-6 py-2.5 rounded-full bg-primary text-white text-sm font-medium hover:bg-primary-hover shadow-sm transition-colors flex items-center gap-2;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 dark:bg-background-dark text-gray-900 dark:text-gray-100 min-h-screen flex flex-col antialiased">
+<header class="bg-white dark:bg-surface-dark border-b border-gray-200 dark:border-border-dark sticky top-0 z-50 h-16">
+<div class="px-6 h-full flex items-center justify-between w-full max-w-[1440px] mx-auto">
+<div class="flex items-center gap-2">
+<div class="text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">verified_user</span>
+</div>
+<h2 class="text-lg font-medium tracking-tight text-gray-800 dark:text-gray-200">ProofStack</h2>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-primary transition-colors" href="#">Analyze</a>
+<a class="text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-primary transition-colors" href="#">History</a>
+</nav>
+<div class="flex items-center gap-4">
+<div class="h-8 w-8 rounded-full bg-gray-200 dark:bg-gray-700 overflow-hidden cursor-pointer" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA-SnFXXXtFORZ1OcJpb2yWqO49McNpliPnDpO6K5kTzBgQP2jw1EhIfmWrcfVyoPh3SYK3yGHRLNC17BQEYQ_nbw1A3QDOh6bsqm_tqWX3wHm5ZPNnOqH-5sbpxo9RoNBT9yiwh8BGi-kPA5PLb_2QusK8_0qU2yG688ACFTyhnJMqx4-nO4Ei2v8nNB_eBg_BlprvnSfDjoI1sAYss4hVl9YURtXNbNHM9eA9gS92E43je6UpUh-wVPjsg7uGTfypY_hDPaHMi80s"); background-size: cover;'></div>
+</div>
+</div>
+</header>
+<main class="flex-1 flex flex-col items-center py-12 px-4 sm:px-6">
+<div class="w-full max-w-[680px] mb-10">
+<div class="flex items-center justify-between relative">
+<div class="absolute left-0 top-1/2 -translate-y-1/2 w-full h-[1px] bg-gray-200 dark:bg-gray-700 -z-10"></div>
+<div class="flex flex-col items-center gap-2 bg-gray-50 dark:bg-background-dark px-4 z-10">
+<div class="flex items-center justify-center w-8 h-8 rounded-full bg-primary text-white text-xs font-bold">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+<span class="text-[11px] font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wide">Profiles</span>
+</div>
+<div class="flex flex-col items-center gap-2 bg-gray-50 dark:bg-background-dark px-4 z-10">
+<div class="flex items-center justify-center w-8 h-8 rounded-full bg-primary text-white text-xs font-bold">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+<span class="text-[11px] font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wide">Resume</span>
+</div>
+<div class="flex flex-col items-center gap-2 bg-gray-50 dark:bg-background-dark px-4 z-10">
+<div class="flex items-center justify-center w-8 h-8 rounded-full bg-primary text-white text-sm font-bold shadow-md ring-4 ring-gray-50 dark:ring-background-dark">
+                    3
+                </div>
+<span class="text-[11px] font-bold text-primary uppercase tracking-wide">Experience</span>
+</div>
+<div class="flex flex-col items-center gap-2 bg-gray-50 dark:bg-background-dark px-4 z-10">
+<div class="flex items-center justify-center w-8 h-8 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-500 dark:text-gray-400 text-sm font-medium">
+                    4
+                </div>
+<span class="text-[11px] font-medium text-gray-400 dark:text-gray-500 uppercase tracking-wide">Review</span>
+</div>
+</div>
+</div>
+<div class="w-full max-w-[720px] bg-white dark:bg-surface-dark rounded-2xl shadow-sm border border-gray-200 dark:border-border-dark overflow-hidden flex flex-col">
+<div class="p-8 pb-6">
+<h1 class="text-2xl font-normal text-gray-900 dark:text-gray-100 mb-2">Projects &amp; Experience</h1>
+<p class="text-sm text-gray-500 dark:text-text-secondary-dark">Add notable projects and work experience from the candidate's history.</p>
+</div>
+<div class="px-8 pb-8 space-y-10">
+<div class="space-y-4">
+<div class="flex items-center justify-between">
+<h3 class="text-sm font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wide">Projects</h3>
+<button class="text-primary hover:text-primary-hover text-sm font-medium flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[18px]">add</span> Add
+                    </button>
+</div>
+<div class="group">
+<label class="form-label" for="project-name-1">Project Name</label>
+<div class="relative">
+<input class="form-input" id="project-name-1" name="project-name-1" placeholder="e.g. Distributed Cache Implementation" type="text" value="My Cinematic Developer Portfolio"/>
+</div>
+</div>
+</div>
+<div class="space-y-4">
+<div class="flex items-center justify-between border-t border-gray-100 dark:border-border-dark pt-8">
+<h3 class="text-sm font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wide">Work Experience</h3>
+<button class="text-primary hover:text-primary-hover text-sm font-medium flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[18px]">add</span> Add
+                    </button>
+</div>
+<div class="space-y-5">
+<div>
+<label class="form-label" for="company-1">Company</label>
+<input class="form-input" id="company-1" name="company-1" placeholder="e.g. Google" type="text" value="IEEE Computer Society"/>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="relative">
+<label class="form-label" for="start-date-1">Start Date</label>
+<div class="relative">
+<input class="form-input pr-10" id="start-date-1" name="start-date-1" placeholder="mm/dd/yyyy" type="text"/>
+<div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none text-gray-400">
+<span class="material-symbols-outlined text-[20px]">calendar_today</span>
+</div>
+</div>
+</div>
+<div class="relative">
+<label class="form-label" for="end-date-1">End Date</label>
+<div class="relative">
+<input class="form-input pr-10" id="end-date-1" name="end-date-1" placeholder="mm/dd/yyyy" type="text"/>
+<div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none text-gray-400">
+<span class="material-symbols-outlined text-[20px]">calendar_today</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-gray-50 dark:bg-[#28292A] px-8 py-5 flex items-center justify-between border-t border-gray-200 dark:border-border-dark">
+<button class="btn-outline" type="button">
+                Back
+            </button>
+<button class="btn-primary" type="button">
+                Continue
+            </button>
+</div>
+</div>
+<div class="mt-8 text-xs text-gray-400 dark:text-gray-600">
+        © 2026 ProofStack. Built for truth.
+    </div>
+</main>
+
+</body></html>

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Analyze Wizard - ProofStack</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1A73E8", // Google Blue updated
+                        "primary-hover": "#1557B0",
+                        "background-light": "#F8F9FA", // Google Cloud background
+                        "surface-light": "#FFFFFF", // White surface
+                        "text-primary": "#202124", // Google Dark Gray
+                        "text-secondary": "#5F6368", // Google Gray
+                        "border-light": "#E0E0E0", // Subtle gray border
+                        "border-hover": "#dadce0",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica", "Arial", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "4px", "lg": "8px", "xl": "8px", "full": "9999px"}, // Google Material curves are often 4px or 8px
+                    boxShadow: {
+                        "card": "0 1px 2px 0 rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15)", // Google style shadow
+                        "flat": "none",
+                    }
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+    @layer utilities {
+        .text-label {
+            @apply text-xs font-semibold text-text-secondary uppercase tracking-wider;
+        }
+        .text-value {
+            @apply text-sm text-text-primary font-medium;
+        }
+        .review-row {
+            @apply grid grid-cols-1 sm:grid-cols-3 gap-2 py-3 border-b border-border-light last:border-0;
+        }
+        .review-label {
+             @apply text-sm text-text-secondary font-medium;
+        }
+        .review-data {
+            @apply sm:col-span-2 text-sm text-text-primary;
+        }
+        .stepper-active {
+            @apply bg-primary text-white;
+        }
+        .stepper-inactive {
+            @apply bg-gray-200 text-gray-500;
+        }
+        .stepper-text-active {
+            @apply text-primary font-semibold;
+        }
+        .stepper-text-inactive {
+            @apply text-gray-500 font-medium;
+        }
+    }
+</style>
+</head>
+<body class="bg-background-light font-display text-text-primary min-h-screen flex flex-col antialiased">
+<header class="bg-surface-light border-b border-border-light sticky top-0 z-50">
+<div class="px-6 py-3 flex items-center justify-between w-full max-w-[1440px] mx-auto">
+<div class="flex items-center gap-3">
+<h2 class="text-lg font-medium tracking-tight text-text-secondary flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">data_usage</span>
+    ProofStack
+</h2>
+</div>
+<nav class="hidden md:flex items-center gap-8 ml-auto mr-8">
+<a class="text-sm font-medium text-text-primary border-b-2 border-primary pb-[14px] -mb-[17px]" href="#">Analyze</a>
+<a class="text-sm font-medium text-text-secondary hover:text-text-primary transition-colors" href="#">About</a>
+</nav>
+<div class="flex items-center gap-4">
+<div class="h-8 w-8 rounded-full bg-purple-600 flex items-center justify-center text-xs font-bold text-white cursor-pointer hover:ring-2 hover:ring-offset-2 hover:ring-purple-600 transition-all">
+                    R
+                </div>
+</div>
+</div>
+</header>
+<main class="flex-1 flex flex-col items-center py-12 px-4 sm:px-6">
+<div class="w-full max-w-[800px] mb-10">
+<div class="flex items-center justify-center w-full">
+<div class="flex items-center">
+<div class="flex items-center">
+<div class="flex items-center justify-center w-6 h-6 rounded-full bg-green-600 text-white text-xs font-bold">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+<span class="ml-2 text-sm font-medium text-text-primary">Profiles</span>
+</div>
+<div class="w-12 h-[1px] bg-border-light mx-3"></div>
+<div class="flex items-center">
+<div class="flex items-center justify-center w-6 h-6 rounded-full bg-green-600 text-white text-xs font-bold">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+<span class="ml-2 text-sm font-medium text-text-primary">Resume</span>
+</div>
+<div class="w-12 h-[1px] bg-border-light mx-3"></div>
+<div class="flex items-center">
+<div class="flex items-center justify-center w-6 h-6 rounded-full bg-green-600 text-white text-xs font-bold">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+<span class="ml-2 text-sm font-medium text-text-primary">Experience</span>
+</div>
+<div class="w-12 h-[1px] bg-border-light mx-3"></div>
+<div class="flex items-center">
+<div class="flex items-center justify-center w-6 h-6 rounded-full bg-primary text-white text-xs font-bold">4</div>
+<span class="ml-2 text-sm font-semibold text-primary">Review</span>
+</div>
+</div>
+</div>
+</div>
+<div class="w-full max-w-[800px] bg-surface-light border border-border-light rounded-lg shadow-card p-8 flex flex-col gap-6">
+<div class="space-y-1">
+<h1 class="text-2xl font-normal text-text-primary">Review &amp; Analyze</h1>
+<p class="text-sm text-text-secondary">Confirm the details below before launching the analysis.</p>
+</div>
+<div class="border border-border-light rounded-lg overflow-hidden">
+<div class="bg-gray-50 border-b border-border-light px-6 py-3">
+<h3 class="text-sm font-medium text-text-primary">Summary Data</h3>
+</div>
+<div class="bg-white p-6 space-y-8">
+<div>
+<h3 class="text-xs font-bold text-text-secondary uppercase tracking-wider mb-3 flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">account_circle</span>
+                            Profiles
+                        </h3>
+<div class="space-y-0 pl-1">
+<div class="review-row pt-1">
+<div class="review-label">GitHub</div>
+<div class="review-data">Rohithpranov07</div>
+</div>
+<div class="review-row">
+<div class="review-label">LeetCode / HackerRank</div>
+<div class="review-data">Rohithpranov</div>
+</div>
+<div class="review-row">
+<div class="review-label">LinkedIn</div>
+<div class="review-data truncate text-primary hover:underline cursor-pointer">https://www.linkedin.com/in/rohith-pranov/</div>
+</div>
+<div class="review-row border-none pb-1">
+<div class="review-label">Role Level</div>
+<div class="review-data">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-gray-100 text-text-secondary border border-gray-200">Mid</span>
+</div>
+</div>
+</div>
+</div>
+<div>
+<h3 class="text-xs font-bold text-text-secondary uppercase tracking-wider mb-3 flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">description</span>
+                            Resume
+                        </h3>
+<div class="space-y-0 pl-1">
+<div class="review-row pt-1">
+<div class="review-label">File</div>
+<div class="review-data flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-primary">picture_as_pdf</span>
+<span class="font-medium text-text-primary">Rohith_Pranov_V_Resume.pdf</span>
+</div>
+</div>
+<div class="review-row border-none pb-1">
+<div class="review-label">Skills</div>
+<div class="review-data">
+<div class="flex flex-wrap gap-2">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-blue-50 text-primary border border-blue-100">Python (1y)</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-blue-50 text-primary border border-blue-100">React (2y)</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-blue-50 text-primary border border-blue-100">AWS</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<h3 class="text-xs font-bold text-text-secondary uppercase tracking-wider mb-3 flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">work</span>
+                            Experience
+                        </h3>
+<div class="space-y-0 pl-1">
+<div class="review-row pt-1">
+<div class="review-label">Projects</div>
+<div class="review-data">My Cinematic Developer Portfolio</div>
+</div>
+<div class="review-row border-none pb-1">
+<div class="review-label">Companies</div>
+<div class="review-data">IEEE Computer Society</div>
+</div>
+</div>
+</div>
+<div>
+<h3 class="text-xs font-bold text-text-secondary uppercase tracking-wider mb-3 flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">link</span>
+                            Portfolio Links
+                        </h3>
+<div class="review-row border-none pt-0 pl-1">
+<div class="col-span-3 text-sm">
+<a class="text-primary hover:underline hover:text-primary-hover break-all font-medium" href="#">https://rohithpranov.online/</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-2">
+<button class="px-6 py-2 rounded text-primary font-medium text-sm border border-border-light hover:bg-gray-50 hover:border-gray-300 transition-colors" type="button">
+                    Back
+                </button>
+<button class="px-6 py-2 rounded bg-primary text-white font-medium text-sm shadow-sm hover:bg-primary-hover hover:shadow-md transition-all flex items-center gap-2" type="button">
+<span class="material-symbols-outlined text-[18px]">analytics</span>
+                    Analyze Candidate
+                </button>
+</div>
+</div>
+</main>
+<footer class="py-6 text-center text-text-secondary text-sm">
+        © 2026 ProofStack. Built for truth.
+    </footer>
+</body></html>

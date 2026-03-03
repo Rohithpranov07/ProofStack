@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ProofStack - Verify Developer Skills</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#1A73E8",
+                        "google-blue": "#4285F4",
+                        "google-red": "#EA4335",
+                        "google-yellow": "#FBBC04",
+                        "google-green": "#34A853",
+                        "background-light": "#F8F9FA",
+                        "background-dark": "#202124",
+                        "surface-light": "#FFFFFF",
+                        "surface-dark": "#303134",
+                        "border-light": "#DADCE0",
+                        "border-dark": "#5F6368",
+                        "text-primary-light": "#202124",
+                        "text-secondary-light": "#5F6368",
+                        "text-primary-dark": "#E8EAED",
+                        "text-secondary-dark": "#9AA0A6",
+                    },
+                    fontFamily: {
+                        display: ["Inter", "sans-serif"],
+                        sans: ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.5rem",
+                        lg: "1rem",
+                        xl: "1rem",
+                        "2xl": "1.5rem",
+                        full: "9999px",
+                    },
+                    boxShadow: {
+                        'google': '0 1px 2px 0 rgba(60,64,67,0.3), 0 1px 3px 1px rgba(60,64,67,0.15)',
+                        'google-hover': '0 1px 3px 0 rgba(60,64,67,0.3), 0 4px 8px 3px rgba(60,64,67,0.15)',
+                        'elevation-1': '0px 1px 2px 0px rgba(0, 0, 0, 0.3), 0px 1px 3px 1px rgba(0, 0, 0, 0.15)',
+                        'elevation-2': '0px 1px 2px 0px rgba(0, 0, 0, 0.3), 0px 2px 6px 2px rgba(0, 0, 0, 0.15)',
+                    },
+                    backgroundImage: {
+                        'grid-pattern': "url(\"data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%239AA0A6' fill-opacity='0.2' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='1'/%3E%3C/g%3E%3C/svg%3E\")",
+                    }
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        @layer utilities {
+            .bg-google-gradient {
+                background: linear-gradient(90deg, #4285F4 0%, #EA4335 33%, #FBBC04 66%, #34A853 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+            }
+            .text-glow {
+                text-shadow: 0 0 20px rgba(66, 133, 244, 0.3);
+            }
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-primary-light dark:text-text-primary-dark antialiased transition-colors duration-200">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<div class="fixed inset-0 z-0 pointer-events-none">
+<div class="absolute inset-0 bg-grid-pattern opacity-50 dark:opacity-20"></div>
+<div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-blue-400/10 rounded-full blur-[100px] dark:bg-blue-600/10"></div>
+<div class="absolute top-[-5%] right-[-5%] w-[35%] h-[35%] bg-red-400/10 rounded-full blur-[100px] dark:bg-red-600/10"></div>
+<div class="absolute bottom-[-10%] left-[20%] w-[30%] h-[30%] bg-yellow-400/10 rounded-full blur-[100px] dark:bg-yellow-600/10"></div>
+<div class="absolute bottom-[10%] right-[-10%] w-[40%] h-[40%] bg-green-400/10 rounded-full blur-[100px] dark:bg-green-600/10"></div>
+</div>
+<header class="sticky top-0 z-50 w-full border-b border-border-light dark:border-border-dark bg-surface-light/90 dark:bg-surface-dark/90 backdrop-blur-md supports-[backdrop-filter]:bg-surface-light/80">
+<div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+<div class="flex items-center gap-2">
+<div class="flex h-9 w-9 items-center justify-center rounded-xl bg-primary shadow-sm text-white">
+<span class="material-symbols-outlined" style="font-size: 22px;">verified_user</span>
+</div>
+<span class="text-xl font-medium tracking-tight text-text-primary-light dark:text-text-primary-dark">ProofStack</span>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-medium text-text-secondary-light hover:text-primary dark:text-text-secondary-dark dark:hover:text-primary transition-colors" href="#">Product</a>
+<a class="text-sm font-medium text-text-secondary-light hover:text-primary dark:text-text-secondary-dark dark:hover:text-primary transition-colors" href="#">Solutions</a>
+<a class="text-sm font-medium text-text-secondary-light hover:text-primary dark:text-text-secondary-dark dark:hover:text-primary transition-colors" href="#">Pricing</a>
+<a class="text-sm font-medium text-text-secondary-light hover:text-primary dark:text-text-secondary-dark dark:hover:text-primary transition-colors" href="#">Docs</a>
+</nav>
+<div class="flex items-center gap-3">
+<a class="hidden sm:block text-sm font-medium text-primary hover:text-blue-700 dark:text-blue-300 dark:hover:text-blue-200 transition-colors" href="#">Sign In</a>
+<button class="flex items-center justify-center rounded-full bg-primary px-6 py-2 text-sm font-medium text-white transition-all hover:bg-blue-700 hover:shadow-google focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 dark:focus:ring-offset-background-dark">
+                    Get Started
+                </button>
+</div>
+</div>
+</header>
+<main class="flex-grow relative z-10">
+<section class="relative overflow-hidden py-16 sm:py-24 lg:py-32">
+<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+<div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+<div class="flex-1 text-center lg:text-left">
+<div class="mb-6 inline-flex items-center rounded-full border border-border-light bg-white/50 px-4 py-1.5 text-xs font-medium text-text-secondary-light backdrop-blur-sm dark:border-border-dark dark:bg-surface-dark/50 dark:text-text-secondary-dark shadow-sm">
+<span class="mr-2 relative flex h-2.5 w-2.5">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500"></span>
+</span>
+                            New: AI-Powered Verification 2.0 is live
+                        </div>
+<h1 class="text-4xl font-normal tracking-tight text-text-primary-light sm:text-6xl dark:text-text-primary-dark mb-6 leading-[1.15]">
+                            Don’t just claim it. <br class="hidden sm:block"/>
+<span class="font-bold bg-google-gradient text-glow">Prove it.</span>
+</h1>
+<p class="mx-auto lg:mx-0 mt-6 max-w-2xl text-lg text-text-secondary-light dark:text-text-secondary-dark leading-relaxed">
+                            Verify developer skills with Google-grade AI code analysis and real-world project validation. Build an engineering team you can trust with data, not gut feelings.
+                        </p>
+<div class="mt-10 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+<button class="h-12 w-full sm:w-auto min-w-[160px] rounded-full bg-primary px-8 text-base font-medium text-white shadow-md transition-all hover:bg-blue-700 hover:shadow-google hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 dark:focus:ring-offset-background-dark">
+                                Analyze a Candidate
+                            </button>
+<button class="h-12 w-full sm:w-auto min-w-[160px] rounded-full border border-border-light bg-surface-light px-8 text-base font-medium text-primary transition-all hover:bg-blue-50 hover:shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 dark:border-border-dark dark:bg-transparent dark:text-blue-300 dark:hover:bg-white/5 dark:focus:ring-offset-background-dark">
+                                View Demo
+                            </button>
+</div>
+</div>
+<div class="flex-1 w-full max-w-[600px] relative perspective-1000">
+<div class="absolute -top-12 -left-8 bg-surface-dark text-white p-4 rounded-xl shadow-xl z-20 text-xs font-mono border border-border-dark opacity-90 hidden md:block transform -rotate-3 hover:rotate-0 transition-transform duration-300">
+<div class="flex gap-1.5 mb-2">
+<div class="w-2.5 h-2.5 rounded-full bg-red-500"></div>
+<div class="w-2.5 h-2.5 rounded-full bg-yellow-500"></div>
+<div class="w-2.5 h-2.5 rounded-full bg-green-500"></div>
+</div>
+<pre><code class="language-python">def verify_user(id):
+  return proofstack.check(id)</code></pre>
+</div>
+<div class="relative rounded-2xl border border-border-light bg-surface-light shadow-2xl dark:border-border-dark dark:bg-surface-dark overflow-hidden transform transition-all hover:scale-[1.01]">
+<div class="h-14 border-b border-border-light dark:border-border-dark flex items-center justify-between px-6 bg-gray-50 dark:bg-[#252629]">
+<div class="flex items-center gap-3">
+<div class="h-8 w-8 rounded-full bg-gray-200 dark:bg-gray-600 overflow-hidden">
+<img alt="User" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZq7v-lYIFbA0-krCSpHVibZ4Vr8KeAraZFw9uoQBdXDr0N4lQRgb9IJMenB4OZrwwWWG4Kgt931FbiZ-qpmtATkV4X2ZEUDy2M228I52ahhkVZcuuMIwi0fX2wONs0edOEbhfETAZhICU3sCR_TJUwuOS4fAzRnLDCUindF5ZJQsVDS-wjUHue5xMQUh1BI11-FkJOXhr1tthDDFFBxp1M8l9tVCgRRo8VcSF8qkcmPIZZgKe1dGkALdI25i3t-_6TXyKUftIv4_p"/>
+</div>
+<div class="flex flex-col">
+<span class="text-sm font-medium text-text-primary-light dark:text-text-primary-dark">Alex Developer</span>
+<span class="text-[10px] text-text-secondary-light dark:text-text-secondary-dark">Senior Backend Engineer</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-green-500 text-sm">check_circle</span>
+<span class="text-xs font-medium text-green-600 dark:text-green-400">Verified</span>
+</div>
+</div>
+<div class="p-6 space-y-6">
+<div class="flex justify-between items-center bg-blue-50 dark:bg-blue-900/10 p-4 rounded-xl border border-blue-100 dark:border-blue-800/30">
+<div>
+<p class="text-xs text-text-secondary-light dark:text-text-secondary-dark uppercase tracking-wider font-semibold">Authenticity Score</p>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="text-3xl font-bold text-google-blue">98%</span>
+<span class="text-sm text-green-600 font-medium">+2.4% vs avg</span>
+</div>
+</div>
+<div class="h-12 w-12 rounded-full border-4 border-google-blue border-r-transparent flex items-center justify-center rotate-45">
+<span class="material-symbols-outlined text-google-blue -rotate-45">verified</span>
+</div>
+</div>
+<div class="space-y-3">
+<div class="flex justify-between text-sm">
+<span class="text-text-secondary-light dark:text-text-secondary-dark">System Design</span>
+<span class="font-medium text-text-primary-light dark:text-text-primary-dark">92/100</span>
+</div>
+<div class="h-2 w-full bg-gray-100 dark:bg-gray-700 rounded-full overflow-hidden">
+<div class="h-full bg-google-blue w-[92%] rounded-full"></div>
+</div>
+<div class="flex justify-between text-sm pt-2">
+<span class="text-text-secondary-light dark:text-text-secondary-dark">Algorithms</span>
+<span class="font-medium text-text-primary-light dark:text-text-primary-dark">88/100</span>
+</div>
+<div class="h-2 w-full bg-gray-100 dark:bg-gray-700 rounded-full overflow-hidden">
+<div class="h-full bg-google-green w-[88%] rounded-full"></div>
+</div>
+<div class="flex justify-between text-sm pt-2">
+<span class="text-text-secondary-light dark:text-text-secondary-dark">Code Quality</span>
+<span class="font-medium text-text-primary-light dark:text-text-primary-dark">95/100</span>
+</div>
+<div class="h-2 w-full bg-gray-100 dark:bg-gray-700 rounded-full overflow-hidden">
+<div class="h-full bg-google-yellow w-[95%] rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="absolute -bottom-6 -right-4 bg-white dark:bg-surface-dark px-4 py-3 rounded-lg shadow-google-hover border border-border-light dark:border-border-dark flex items-center gap-3 z-20 animate-bounce delay-1000 duration-[2000ms]">
+<div class="flex -space-x-2">
+<div class="w-8 h-8 rounded-full border-2 border-white dark:border-surface-dark bg-gray-200"></div>
+<div class="w-8 h-8 rounded-full border-2 border-white dark:border-surface-dark bg-gray-300"></div>
+<div class="w-8 h-8 rounded-full border-2 border-white dark:border-surface-dark bg-gray-400"></div>
+</div>
+<div class="flex flex-col">
+<span class="text-xs font-bold text-text-primary-light dark:text-text-primary-dark">Team Fit</span>
+<span class="text-[10px] text-text-secondary-light dark:text-text-secondary-dark">High Potential</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="border-y border-border-light/50 bg-white/50 py-10 dark:border-border-dark/50 dark:bg-surface-dark/30 backdrop-blur-sm">
+<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+<p class="text-center text-sm font-semibold text-text-secondary-light uppercase tracking-wider mb-8 opacity-70">Trusted by engineering teams at</p>
+<div class="flex flex-wrap justify-center items-center gap-12 opacity-60 grayscale transition-all duration-300 hover:grayscale-0 hover:opacity-100">
+<div class="flex items-center gap-2 text-xl font-bold text-gray-600 dark:text-gray-400">
+<span class="material-symbols-outlined">dataset</span> ACME Corp
+                     </div>
+<div class="flex items-center gap-2 text-xl font-bold text-gray-600 dark:text-gray-400">
+<span class="material-symbols-outlined">cloud_circle</span> SkyNet
+                     </div>
+<div class="flex items-center gap-2 text-xl font-bold text-gray-600 dark:text-gray-400">
+<span class="material-symbols-outlined">rocket_launch</span> SpaceY
+                     </div>
+<div class="flex items-center gap-2 text-xl font-bold text-gray-600 dark:text-gray-400">
+<span class="material-symbols-outlined">hub</span> NetWork
+                     </div>
+<div class="flex items-center gap-2 text-xl font-bold text-gray-600 dark:text-gray-400">
+<span class="material-symbols-outlined">security</span> SafeGuard
+                     </div>
+</div>
+</div>
+</section>
+<section class="py-24 bg-surface-light dark:bg-surface-dark/50">
+<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+<div class="text-center max-w-3xl mx-auto mb-16">
+<h2 class="text-3xl font-medium text-text-primary-light dark:text-text-primary-dark mb-4">Enterprise-grade verification</h2>
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-lg">Comprehensive tools designed for the modern hiring stack.</p>
+</div>
+<div class="grid grid-cols-1 gap-8 md:grid-cols-3">
+<div class="group relative rounded-2xl border border-border-light bg-white p-8 transition-all hover:border-google-blue hover:shadow-elevation-2 dark:border-border-dark dark:bg-surface-dark dark:hover:border-google-blue">
+<div class="absolute top-0 left-0 h-1 w-full bg-gradient-to-r from-google-blue to-google-green rounded-t-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-full bg-blue-50 text-google-blue shadow-sm dark:bg-blue-900/20 dark:text-blue-300">
+<span class="material-symbols-outlined text-3xl">code_blocks</span>
+</div>
+<h3 class="mb-3 text-xl font-medium text-text-primary-light dark:text-text-primary-dark">AI Code Analysis</h3>
+<p class="text-text-secondary-light dark:text-text-secondary-dark leading-relaxed mb-6">
+                            Our deep learning models analyze code quality, structure, and security patterns instantly, going beyond simple linting.
+                        </p>
+<a class="inline-flex items-center text-sm font-medium text-google-blue hover:text-blue-700 dark:text-blue-300 dark:hover:text-blue-200 group-hover:underline decoration-2 underline-offset-4" href="#">
+                            Learn more <span class="material-symbols-outlined ml-1 text-sm transition-transform group-hover:translate-x-1">arrow_forward</span>
+</a>
+</div>
+<div class="group relative rounded-2xl border border-border-light bg-white p-8 transition-all hover:border-google-red hover:shadow-elevation-2 dark:border-border-dark dark:bg-surface-dark dark:hover:border-google-red">
+<div class="absolute top-0 left-0 h-1 w-full bg-gradient-to-r from-google-red to-google-yellow rounded-t-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-full bg-red-50 text-google-red shadow-sm dark:bg-red-900/20 dark:text-red-300">
+<span class="material-symbols-outlined text-3xl">fingerprint</span>
+</div>
+<h3 class="mb-3 text-xl font-medium text-text-primary-light dark:text-text-primary-dark">Identity Verification</h3>
+<p class="text-text-secondary-light dark:text-text-secondary-dark leading-relaxed mb-6">
+                            Ensure the developer behind the keyboard is who they say they are with biometric-grade identity checks during tests.
+                        </p>
+<a class="inline-flex items-center text-sm font-medium text-google-red hover:text-red-700 dark:text-red-300 dark:hover:text-red-200 group-hover:underline decoration-2 underline-offset-4" href="#">
+                            Learn more <span class="material-symbols-outlined ml-1 text-sm transition-transform group-hover:translate-x-1">arrow_forward</span>
+</a>
+</div>
+<div class="group relative rounded-2xl border border-border-light bg-white p-8 transition-all hover:border-google-green hover:shadow-elevation-2 dark:border-border-dark dark:bg-surface-dark dark:hover:border-google-green">
+<div class="absolute top-0 left-0 h-1 w-full bg-gradient-to-r from-google-green to-google-blue rounded-t-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-full bg-green-50 text-google-green shadow-sm dark:bg-green-900/20 dark:text-green-300">
+<span class="material-symbols-outlined text-3xl">fact_check</span>
+</div>
+<h3 class="mb-3 text-xl font-medium text-text-primary-light dark:text-text-primary-dark">Skill Validation</h3>
+<p class="text-text-secondary-light dark:text-text-secondary-dark leading-relaxed mb-6">
+                            Real-time technical assessments that measure practical coding ability in realistic environments, not just algorithmic puzzles.
+                        </p>
+<a class="inline-flex items-center text-sm font-medium text-google-green hover:text-green-700 dark:text-green-300 dark:hover:text-green-200 group-hover:underline decoration-2 underline-offset-4" href="#">
+                            Learn more <span class="material-symbols-outlined ml-1 text-sm transition-transform group-hover:translate-x-1">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 relative overflow-hidden">
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-gradient-to-r from-blue-100/30 to-purple-100/30 blur-[80px] rounded-full pointer-events-none dark:from-blue-900/10 dark:to-purple-900/10"></div>
+<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
+<div class="mx-auto max-w-4xl text-center mb-16">
+<h2 class="text-3xl font-normal text-text-primary-light dark:text-text-primary-dark mb-4">Scale with confidence</h2>
+<p class="text-text-secondary-light dark:text-text-secondary-dark">Join thousands of companies verifying talent with ProofStack.</p>
+</div>
+<div class="grid grid-cols-2 gap-6 md:grid-cols-4">
+<div class="flex flex-col items-center justify-center rounded-2xl bg-surface-light p-6 text-center dark:bg-surface-dark border border-border-light dark:border-border-dark shadow-sm hover:shadow-md transition-shadow">
+<p class="text-4xl font-normal text-google-blue mb-2">50k+</p>
+<p class="text-sm font-medium text-text-secondary-light dark:text-text-secondary-dark">Developers Verified</p>
+</div>
+<div class="flex flex-col items-center justify-center rounded-2xl bg-surface-light p-6 text-center dark:bg-surface-dark border border-border-light dark:border-border-dark shadow-sm hover:shadow-md transition-shadow">
+<p class="text-4xl font-normal text-google-red mb-2">200+</p>
+<p class="text-sm font-medium text-text-secondary-light dark:text-text-secondary-dark">Companies Trusted</p>
+</div>
+<div class="flex flex-col items-center justify-center rounded-2xl bg-surface-light p-6 text-center dark:bg-surface-dark border border-border-light dark:border-border-dark shadow-sm hover:shadow-md transition-shadow">
+<p class="text-4xl font-normal text-google-yellow mb-2">99.9%</p>
+<p class="text-sm font-medium text-text-secondary-light dark:text-text-secondary-dark">Accuracy Rate</p>
+</div>
+<div class="flex flex-col items-center justify-center rounded-2xl bg-surface-light p-6 text-center dark:bg-surface-dark border border-border-light dark:border-border-dark shadow-sm hover:shadow-md transition-shadow">
+<p class="text-4xl font-normal text-google-green mb-2">24/7</p>
+<p class="text-sm font-medium text-text-secondary-light dark:text-text-secondary-dark">Support &amp; Uptime</p>
+</div>
+</div>
+</div>
+</section>
+<section class="relative overflow-hidden py-24 bg-surface-light dark:bg-surface-dark border-t border-border-light dark:border-border-dark">
+<div class="absolute inset-0 bg-grid-pattern opacity-30"></div>
+<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+<h2 class="mx-auto max-w-3xl text-3xl font-normal tracking-tight text-text-primary-light sm:text-4xl dark:text-text-primary-dark">
+                    Ready to verify your next hire?
+                </h2>
+<p class="mx-auto mt-4 max-w-2xl text-lg text-text-secondary-light dark:text-text-secondary-dark">
+                    Start using ProofStack today and streamline your technical hiring process with enterprise-grade tools.
+                </p>
+<div class="mt-10 flex justify-center gap-4">
+<button class="h-12 min-w-[160px] rounded-full bg-primary px-8 text-base font-medium text-white shadow-md transition-all hover:bg-blue-700 hover:shadow-google focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 dark:focus:ring-offset-background-dark">
+                        Get Started for Free
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<footer class="border-t border-border-light bg-gray-50 py-12 dark:border-border-dark dark:bg-[#1E1F21]">
+<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 mb-12">
+<div class="col-span-2 lg:col-span-2">
+<div class="flex items-center gap-2 mb-4">
+<div class="flex h-7 w-7 items-center justify-center rounded bg-primary text-white">
+<span class="material-symbols-outlined" style="font-size: 18px;">verified_user</span>
+</div>
+<span class="text-lg font-medium text-text-primary-light dark:text-text-primary-dark">ProofStack</span>
+</div>
+<p class="text-sm text-text-secondary-light dark:text-text-secondary-dark mb-6 max-w-xs">
+                        The new standard for technical skill verification. Built for engineering leaders, by engineers.
+                    </p>
+<div class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white dark:bg-surface-dark border border-border-light dark:border-border-dark w-fit shadow-sm">
+<span class="material-symbols-outlined text-text-secondary-light" style="font-size: 16px;">cloud</span>
+<span class="text-xs font-medium text-text-secondary-light dark:text-text-secondary-dark">Built with Google Cloud</span>
+</div>
+</div>
+<div>
+<h4 class="font-medium text-text-primary-light dark:text-text-primary-dark mb-4">Product</h4>
+<ul class="space-y-2 text-sm text-text-secondary-light dark:text-text-secondary-dark">
+<li><a class="hover:text-primary" href="#">Features</a></li>
+<li><a class="hover:text-primary" href="#">Integrations</a></li>
+<li><a class="hover:text-primary" href="#">Pricing</a></li>
+<li><a class="hover:text-primary" href="#">Changelog</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-medium text-text-primary-light dark:text-text-primary-dark mb-4">Company</h4>
+<ul class="space-y-2 text-sm text-text-secondary-light dark:text-text-secondary-dark">
+<li><a class="hover:text-primary" href="#">About Us</a></li>
+<li><a class="hover:text-primary" href="#">Careers</a></li>
+<li><a class="hover:text-primary" href="#">Blog</a></li>
+<li><a class="hover:text-primary" href="#">Contact</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-medium text-text-primary-light dark:text-text-primary-dark mb-4">Legal</h4>
+<ul class="space-y-2 text-sm text-text-secondary-light dark:text-text-secondary-dark">
+<li><a class="hover:text-primary" href="#">Privacy Policy</a></li>
+<li><a class="hover:text-primary" href="#">Terms of Service</a></li>
+<li><a class="hover:text-primary" href="#">Security</a></li>
+</ul>
+</div>
+</div>
+<div class="border-t border-border-light dark:border-border-dark pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-sm text-text-secondary-light dark:text-text-secondary-dark">© 2024 ProofStack Inc. All rights reserved.</p>
+<div class="flex gap-4">
+<a class="text-text-secondary-light hover:text-primary dark:text-text-secondary-dark dark:hover:text-primary transition-colors p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full" href="#">
+<span class="sr-only">Twitter</span>
+<svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path></svg>
+</a>
+<a class="text-text-secondary-light hover:text-primary dark:text-text-secondary-dark dark:hover:text-primary transition-colors p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full" href="#">
+<span class="sr-only">GitHub</span>
+<svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" fill-rule="evenodd"></path></svg>
+</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+
+</body></html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ProofStack - Analysis In Progress</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#1a73e8", // Google Blue
+                        "primary-dark": "#8ab4f8", // Lighter blue for dark mode accents
+                        "background-light": "#ffffff",
+                        "background-dark": "#0f172a", // Dark navy similar to screenshots
+                        "surface-light": "#f8f9fa",
+                        "surface-dark": "#1e293b",
+                        "border-light": "#e5e7eb",
+                        "border-dark": "#334155",
+                        "text-primary-light": "#202124",
+                        "text-primary-dark": "#e2e8f0",
+                        "text-secondary-light": "#5f6368",
+                        "text-secondary-dark": "#94a3b8",
+                        "success": "#1e8e3e",
+                        "success-dark": "#81c995",
+                    },
+                    fontFamily: {
+                        sans: ["Roboto", "sans-serif"],
+                        display: ["Roboto", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.375rem",
+                        'lg': "0.5rem",
+                        'xl': "0.75rem",
+                    },
+                    boxShadow: {
+                        'google': '0 1px 2px 0 rgba(60,64,67,0.3), 0 1px 3px 1px rgba(60,64,67,0.15)',
+                    }
+                },
+            },
+        };
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-sans text-text-primary-light dark:text-text-primary-dark min-h-screen flex flex-col transition-colors duration-200">
+<nav class="border-b border-border-light dark:border-border-dark bg-white dark:bg-background-dark sticky top-0 z-10">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between h-16">
+<div class="flex items-center">
+<div class="flex-shrink-0 flex items-center">
+<span class="text-xl font-bold tracking-tight text-gray-900 dark:text-white">ProofStack</span>
+</div>
+</div>
+<div class="flex items-center space-x-8">
+<a class="text-sm font-medium text-primary dark:text-primary-dark" href="#">Analyze</a>
+<a class="text-sm font-medium text-text-secondary-light dark:text-text-secondary-dark hover:text-gray-900 dark:hover:text-white transition-colors" href="#">About</a>
+<button class="p-2 text-text-secondary-light dark:text-text-secondary-dark rounded-full hover:bg-gray-100 dark:hover:bg-gray-800">
+<span class="material-icons text-xl">dark_mode</span>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<main class="flex-grow flex flex-col items-center justify-center py-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+<div class="absolute inset-0 pointer-events-none opacity-50 dark:opacity-20 z-0">
+<div class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] dark:bg-[radial-gradient(#334155_1px,transparent_1px)] [background-size:20px_20px]"></div>
+</div>
+<div class="w-full max-w-2xl relative z-10">
+<div class="text-center mb-10">
+<h1 class="text-3xl font-normal text-text-primary-light dark:text-white mb-2">Analyzing Candidate Profile</h1>
+<p class="text-text-secondary-light dark:text-text-secondary-dark">Please wait while we verify data across multiple platforms.</p>
+</div>
+<div class="bg-white dark:bg-surface-dark shadow-google dark:shadow-none dark:border dark:border-border-dark rounded-xl overflow-hidden">
+<div class="w-full bg-gray-100 dark:bg-gray-700 h-1">
+<div class="bg-primary h-1 rounded-r-full transition-all duration-1000 ease-out" style="width: 65%;"></div>
+</div>
+<div class="p-6 sm:p-8">
+<div class="flex items-start mb-8 group">
+<div class="flex-shrink-0 mr-4">
+<div class="flex items-center justify-center w-8 h-8 rounded-full bg-success/10 dark:bg-success-dark/20 text-success dark:text-success-dark">
+<span class="material-icons text-sm">check</span>
+</div>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-center mb-1">
+<h3 class="text-sm font-medium text-text-primary-light dark:text-white">Fetching public profiles</h3>
+<span class="text-xs text-text-secondary-light dark:text-text-secondary-dark">Done</span>
+</div>
+<p class="text-xs text-text-secondary-light dark:text-text-secondary-dark">
+                                Retrieved data from GitHub (rohithpranov07), LinkedIn, and LeetCode.
+                            </p>
+</div>
+</div>
+<div class="flex items-start mb-8 group">
+<div class="flex-shrink-0 mr-4">
+<div class="flex items-center justify-center w-8 h-8 rounded-full bg-success/10 dark:bg-success-dark/20 text-success dark:text-success-dark">
+<span class="material-icons text-sm">check</span>
+</div>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-center mb-1">
+<h3 class="text-sm font-medium text-text-primary-light dark:text-white">Resume parsing &amp; entity extraction</h3>
+<span class="text-xs text-text-secondary-light dark:text-text-secondary-dark">Done</span>
+</div>
+<p class="text-xs text-text-secondary-light dark:text-text-secondary-dark">
+                                Extracted skills: Python, React, Node.js. Identified 3 major projects.
+                            </p>
+</div>
+</div>
+<div class="flex items-start mb-8 relative">
+<div class="absolute left-4 top-8 bottom-[-32px] w-0.5 bg-gray-100 dark:bg-gray-700 -z-10"></div>
+<div class="flex-shrink-0 mr-4">
+<div class="relative flex items-center justify-center w-8 h-8">
+<span class="absolute w-full h-full rounded-full border-2 border-primary border-t-transparent animate-spin"></span>
+<div class="w-2.5 h-2.5 bg-primary rounded-full"></div>
+</div>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-center mb-2">
+<h3 class="text-sm font-medium text-primary dark:text-primary-dark">Cross-verifying resume claims</h3>
+<span class="text-xs font-medium text-primary dark:text-primary-dark animate-pulse">Processing...</span>
+</div>
+<div class="w-full bg-gray-100 dark:bg-gray-800 rounded-full h-1.5 mb-2 overflow-hidden">
+<div class="bg-primary h-1.5 rounded-full w-2/3 relative overflow-hidden">
+<div class="absolute inset-0 bg-white/30 w-full h-full animate-[shimmer_1.5s_infinite] -translate-x-full"></div>
+</div>
+</div>
+<p class="text-xs text-text-secondary-light dark:text-text-secondary-dark">
+                                Comparing GitHub commit history with resume timeline 'Jan 2023 - Present'.
+                            </p>
+</div>
+</div>
+<div class="flex items-start mb-8 opacity-50">
+<div class="flex-shrink-0 mr-4">
+<div class="flex items-center justify-center w-8 h-8 rounded-full border border-border-light dark:border-border-dark bg-white dark:bg-background-dark">
+<span class="text-xs text-text-secondary-light dark:text-text-secondary-dark">4</span>
+</div>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-center mb-1">
+<h3 class="text-sm font-medium text-text-primary-light dark:text-white">Calculating Trust Score</h3>
+</div>
+<p class="text-xs text-text-secondary-light dark:text-text-secondary-dark">
+                                Generating deterministic credibility metrics.
+                            </p>
+</div>
+</div>
+<div class="flex items-start opacity-50">
+<div class="flex-shrink-0 mr-4">
+<div class="flex items-center justify-center w-8 h-8 rounded-full border border-border-light dark:border-border-dark bg-white dark:bg-background-dark">
+<span class="text-xs text-text-secondary-light dark:text-text-secondary-dark">5</span>
+</div>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-center mb-1">
+<h3 class="text-sm font-medium text-text-primary-light dark:text-white">Final Report Generation</h3>
+</div>
+<p class="text-xs text-text-secondary-light dark:text-text-secondary-dark">
+                                Preparing PDF summary and sharable link.
+                            </p>
+</div>
+</div>
+</div>
+<div class="bg-surface-light dark:bg-gray-800/50 px-6 py-4 flex justify-between items-center border-t border-border-light dark:border-border-dark">
+<span class="text-xs text-text-secondary-light dark:text-text-secondary-dark flex items-center gap-1">
+<span class="material-icons text-sm">info</span>
+                        Estimated time remaining: ~45 seconds
+                    </span>
+<button class="text-sm text-text-secondary-light dark:text-text-secondary-dark hover:text-red-600 dark:hover:text-red-400 font-medium transition-colors">
+                        Cancel Analysis
+                    </button>
+</div>
+</div>
+<div class="mt-6 text-center">
+<p class="text-xs text-text-secondary-light dark:text-text-secondary-dark opacity-70">
+                    © 2026 ProofStack. Built for truth.
+                </p>
+</div>
+</div>
+</main>
+<style>
+        @keyframes shimmer {
+            100% {
+                transform: translateX(100%);
+            }
+        }
+    </style>
+<script>
+        // Simple mock to check dark mode preference (optional for this static demo but good practice)
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+    </script>
+
+</body></html>
