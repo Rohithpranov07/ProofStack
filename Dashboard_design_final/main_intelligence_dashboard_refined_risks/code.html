@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Enterprise Intelligence Console - ProofStack</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&amp;family=Roboto:wght@300;400;500;700&amp;family=Roboto+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1A73E8",
+                        "primary-dark": "#1557b0",
+                        "on-primary": "#FFFFFF",
+                        "secondary": "#E8F0FE",
+                        "on-secondary": "#174EA6",
+                        "surface": "#FFFFFF",
+                        "on-surface": "#202124",
+                        "background": "#F8F9FA",
+                        "outline": "#DADCE0",
+                        "success": "#1E8E3E",
+                        "warning": "#F9AB00",
+                        "danger": "#D93025",
+                        "info": "#1967D2",
+                    },
+                    fontFamily: {
+                        "sans": ["Google Sans", "Roboto", "sans-serif"],
+                        "body": ["Roboto", "sans-serif"],
+                        "mono": ["Roboto Mono", "monospace"],
+                    },
+                    borderRadius: {
+                        "card": "16px",
+                        "pill": "9999px",
+                    },
+                    boxShadow: {
+                        "elevation-1": "0 1px 2px 0 rgba(60,64,67,0.3), 0 1px 3px 1px rgba(60,64,67,0.15)",
+                        "elevation-2": "0 1px 2px 0 rgba(60,64,67,0.3), 0 2px 6px 2px rgba(60,64,67,0.15)",
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #F8F9FA;
+            background-image: 
+                radial-gradient(#DADCE0 0.5px, transparent 0.5px), 
+                linear-gradient(to right, #DADCE0 0.5px, transparent 0.5px), 
+                linear-gradient(to bottom, #DADCE0 0.5px, transparent 0.5px);
+            background-size: 20px 20px, 100px 100px, 100px 100px;
+            background-attachment: fixed;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.filled {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }.radar-chart-bg {
+            background-image: radial-gradient(circle, transparent 20%, #E8F0FE 21%, transparent 22%),
+                              radial-gradient(circle, transparent 40%, #E8F0FE 41%, transparent 42%),
+                              radial-gradient(circle, transparent 60%, #E8F0FE 61%, transparent 62%),
+                              radial-gradient(circle, transparent 80%, #E8F0FE 81%, transparent 82%);
+        }
+        .area-chart-fill {
+            background: linear-gradient(180deg, rgba(26, 115, 232, 0.2) 0%, rgba(26, 115, 232, 0.0) 100%);
+        }
+    </style>
+</head>
+<body class="font-body text-on-surface antialiased min-h-screen flex flex-col">
+<header class="bg-surface border-b border-outline sticky top-0 z-50">
+<div class="max-w-[1600px] mx-auto px-6 h-16 flex items-center justify-between">
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-3xl">shield_person</span>
+<span class="font-sans font-bold text-xl text-gray-800 tracking-tight">ProofStack</span>
+</div>
+<div class="h-6 w-px bg-outline mx-2"></div>
+<div class="flex items-center gap-3">
+<div class="h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-sm">AM</div>
+<div>
+<h1 class="font-sans font-medium text-sm text-gray-900 leading-tight">Alex Mercer</h1>
+<p class="text-xs text-gray-500 leading-tight">Senior Frontend Engineer</p>
+</div>
+<span class="bg-secondary text-on-secondary text-[10px] font-bold px-2 py-0.5 rounded-sm uppercase tracking-wider ml-2">Verified</span>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<button class="flex items-center gap-2 px-4 py-2 text-sm font-medium text-primary hover:bg-secondary/50 rounded-pill transition-colors">
+<span class="material-symbols-outlined text-[18px]">refresh</span>
+                    Re-run Analysis
+                </button>
+<button class="flex items-center gap-2 px-4 py-2 text-sm font-medium bg-primary text-white hover:bg-primary-dark rounded-pill shadow-sm transition-colors">
+<span class="material-symbols-outlined text-[18px]">picture_as_pdf</span>
+                    Export PDF
+                </button>
+</div>
+</div>
+</header>
+<main class="flex-1 p-6 max-w-[1600px] mx-auto w-full">
+<div class="grid grid-cols-12 gap-6">
+<div class="col-span-12 lg:col-span-4 flex flex-col gap-6">
+<div class="bg-surface rounded-card p-6 shadow-elevation-1 border border-outline/50 relative overflow-hidden">
+<div class="flex justify-between items-start mb-6">
+<div>
+<h2 class="text-lg font-sans font-medium text-gray-900">Global Trust Score</h2>
+<p class="text-xs text-gray-500 mt-1">Updated 2 mins ago</p>
+</div>
+<span class="bg-green-50 text-success border border-green-200 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider flex items-center gap-1">
+<span class="material-symbols-outlined text-sm filled">check_circle</span>
+                            Strong
+                        </span>
+</div>
+<div class="flex flex-col items-center justify-center mb-8 relative">
+<div class="relative z-10 text-center">
+<span class="text-6xl font-sans font-medium text-gray-900 tracking-tighter">84</span>
+<span class="text-2xl text-gray-400 font-light">/100</span>
+</div>
+<div class="absolute inset-0 flex items-center justify-center opacity-30 pointer-events-none">
+<div class="w-48 h-48 rounded-full border border-primary/20 flex items-center justify-center">
+<div class="w-32 h-32 rounded-full border border-primary/20 flex items-center justify-center">
+<div class="w-16 h-16 rounded-full border border-primary/20"></div>
+</div>
+</div>
+</div>
+<svg class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 pointer-events-none" viewbox="0 0 100 100">
+<polygon fill="rgba(26, 115, 232, 0.1)" points="50,10 90,40 80,85 20,85 10,40" stroke="#1A73E8" stroke-width="1.5"></polygon>
+<circle cx="50" cy="10" fill="#1A73E8" r="2"></circle>
+<circle cx="90" cy="40" fill="#1A73E8" r="2"></circle>
+<circle cx="80" cy="85" fill="#1A73E8" r="2"></circle>
+<circle cx="20" cy="85" fill="#1A73E8" r="2"></circle>
+<circle cx="10" cy="40" fill="#1A73E8" r="2"></circle>
+</svg>
+</div>
+<div class="grid grid-cols-2 gap-4 text-xs font-medium text-gray-600">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary"></span> GitHub Activity
+                         </div>
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary"></span> Resume Match
+                         </div>
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary"></span> Identity
+                         </div>
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary"></span> Social Graph
+                         </div>
+</div>
+</div>
+<div class="bg-surface rounded-card p-0 shadow-elevation-1 border border-outline/50 overflow-hidden">
+<div class="px-6 py-4 border-b border-outline/50 flex justify-between items-center bg-gray-50">
+<h3 class="text-sm font-bold text-gray-800 uppercase tracking-wide flex items-center gap-2">
+<span class="material-symbols-outlined text-danger text-lg filled">warning</span>
+                            Risk Signals
+                        </h3>
+<span class="bg-danger/10 text-danger text-xs font-bold px-2 py-0.5 rounded-full">2 Detected</span><button class="flex items-center gap-1 px-2 py-1 text-[10px] font-bold text-primary hover:bg-secondary rounded transition-colors ml-auto uppercase tracking-wider">View Details <span class="material-symbols-outlined text-[14px]">open_in_new</span></button>
+</div>
+<div class="divide-y divide-outline/30">
+<div class="p-4 hover:bg-gray-50 transition-colors">
+<div class="flex justify-between items-start mb-2">
+<span class="font-medium text-sm text-gray-900">Email Age Mismatch</span>
+<span class="text-[10px] font-bold text-white bg-danger px-1.5 py-0.5 rounded uppercase">High</span>
+</div>
+<p class="text-xs text-gray-600 mb-2">Primary email domain creation date is recent (&lt; 6 months).</p>
+<div class="bg-gray-50 border border-outline/30 rounded p-3 flex flex-col gap-1">
+<div class="flex justify-between items-center text-[11px]">
+<span class="text-gray-600 font-medium uppercase tracking-wider">Domain Age</span>
+<span class="font-mono text-gray-900 font-medium bg-white px-1.5 py-0.5 rounded border border-outline/20 shadow-sm">45d</span>
+</div>
+<div class="flex justify-between items-center text-[11px]">
+<span class="text-gray-600 font-medium uppercase tracking-wider">Expected Tenure</span>
+<span class="font-mono text-gray-900 font-medium bg-white px-1.5 py-0.5 rounded border border-outline/20 shadow-sm">5y</span>
+</div>
+</div>
+</div>
+<div class="p-4 hover:bg-gray-50 transition-colors">
+<div class="flex justify-between items-start mb-2">
+<span class="font-medium text-sm text-gray-900">Geo-IP Discrepancy</span>
+<span class="text-[10px] font-bold text-white bg-warning px-1.5 py-0.5 rounded uppercase">Med</span>
+</div>
+<p class="text-xs text-gray-600 mb-2">Login IP indicates location different from stated residency.</p>
+<div class="bg-gray-50 border border-outline/30 rounded p-3 flex flex-col gap-1">
+<div class="flex justify-between items-center text-[11px]">
+<span class="text-gray-600 font-medium uppercase tracking-wider">IP Location</span>
+<span class="font-mono text-gray-900 font-medium bg-white px-1.5 py-0.5 rounded border border-outline/20 shadow-sm">"Kyiv, UA"</span>
+</div>
+<div class="flex justify-between items-center text-[11px]">
+<span class="text-gray-600 font-medium uppercase tracking-wider">Claimed Location</span>
+<span class="font-mono text-gray-900 font-medium bg-white px-1.5 py-0.5 rounded border border-outline/20 shadow-sm">"San Francisco, US"</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-surface rounded-card p-6 shadow-elevation-1 border border-outline/50">
+<div class="flex justify-between items-center mb-4">
+<h3 class="text-base font-sans font-medium text-gray-900">Problem Solving</h3>
+<div class="flex items-center gap-3"><span class="text-[10px] font-medium text-gray-400 uppercase tracking-tight">LeetCode/HackerRank</span><button class="flex items-center gap-1 px-2 py-1 text-xs font-medium text-primary hover:bg-secondary rounded-md transition-colors">View Details <span class="material-symbols-outlined text-[14px]">open_in_new</span></button></div>
+</div>
+<div class="flex items-end gap-2 h-32 mb-2 w-full justify-between px-2">
+<div class="w-8 bg-blue-100 rounded-t-sm h-[40%] relative group">
+<div class="absolute bottom-0 w-full bg-primary rounded-t-sm h-[60%]"></div>
+</div>
+<div class="w-8 bg-blue-100 rounded-t-sm h-[60%] relative group">
+<div class="absolute bottom-0 w-full bg-primary rounded-t-sm h-[75%]"></div>
+</div>
+<div class="w-8 bg-blue-100 rounded-t-sm h-[50%] relative group">
+<div class="absolute bottom-0 w-full bg-primary rounded-t-sm h-[40%]"></div>
+</div>
+<div class="w-8 bg-blue-100 rounded-t-sm h-[80%] relative group">
+<div class="absolute bottom-0 w-full bg-primary rounded-t-sm h-[90%]"></div>
+</div>
+<div class="w-8 bg-blue-100 rounded-t-sm h-[70%] relative group">
+<div class="absolute bottom-0 w-full bg-primary rounded-t-sm h-[85%]"></div>
+</div>
+</div>
+<div class="flex justify-between text-[10px] text-gray-400 font-mono px-2 uppercase">
+<span>Easy</span>
+<span>Med</span>
+<span>Hard</span>
+<span>Alg</span>
+<span>Sys</span>
+</div>
+<div class="mt-4 pt-4 border-t border-outline/30 flex justify-between items-center">
+<div class="text-xs text-gray-600">Difficulty Trend</div>
+<div class="flex items-center text-success text-xs font-bold">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+                            +12%
+                        </div>
+</div>
+</div>
+</div>
+<div class="col-span-12 lg:col-span-8 flex flex-col gap-6">
+<div class="bg-surface rounded-card p-6 shadow-elevation-1 border border-outline/50">
+<div class="flex justify-between items-center mb-6">
+<div class="flex items-center gap-3">
+<div class="p-2 bg-secondary rounded-lg text-primary">
+<span class="material-symbols-outlined">code</span>
+</div>
+<div>
+<h3 class="text-lg font-sans font-medium text-gray-900">Code Authenticity</h3>
+<p class="text-xs text-gray-500">Commit patterns &amp; stylistic entropy</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="text-right">
+<p class="text-xs text-gray-500 uppercase tracking-wide">Consistency</p>
+<p class="text-lg font-mono font-medium text-gray-900">98.2%</p>
+</div>
+<div class="h-10 w-px bg-outline"></div>
+<div class="text-right">
+<p class="text-xs text-gray-500 uppercase tracking-wide">Entropy</p>
+<p class="text-lg font-mono font-medium text-success">Low</p>
+</div>
+</div>
+<button class="flex items-center gap-1 px-3 py-1.5 text-xs font-medium text-primary hover:bg-secondary rounded-md transition-colors">
+    View Details
+    <span class="material-symbols-outlined text-[16px]">open_in_new</span>
+</button></div>
+<div class="relative h-48 w-full border-b border-l border-outline/50">
+<div class="absolute inset-0 flex items-end">
+<svg class="w-full h-full" preserveaspectratio="none" viewbox="0 0 400 100">
+<defs>
+<lineargradient id="chartGradient" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#1A73E8" stop-opacity="0.3"></stop>
+<stop offset="100%" stop-color="#1A73E8" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+<path d="M0,80 Q40,70 80,40 T160,30 T240,50 T320,20 T400,60 V100 H0 Z" fill="url(#chartGradient)"></path>
+<path d="M0,80 Q40,70 80,40 T160,30 T240,50 T320,20 T400,60" fill="none" stroke="#1A73E8" stroke-width="2"></path>
+</svg>
+</div>
+<div class="absolute top-0 w-full border-t border-dashed border-outline/30 mt-10"></div>
+<div class="absolute top-0 w-full border-t border-dashed border-outline/30 mt-24"></div>
+<div class="absolute top-0 w-full border-t border-dashed border-outline/30 mt-36"></div>
+</div>
+<div class="flex justify-between text-[10px] text-gray-400 font-mono mt-2">
+<span>Jan 2023</span>
+<span>Jun 2023</span>
+<span>Jan 2024</span>
+<span>Present</span>
+</div>
+</div>
+<div class="bg-surface rounded-card shadow-elevation-1 border border-outline/50 overflow-hidden">
+<div class="p-6 border-b border-outline/50 relative">
+<h3 class="text-base font-sans font-medium text-gray-900">Profile Consistency Verification</h3>
+<p class="text-xs text-gray-500 mt-1">Cross-referencing Resume data points with GitHub &amp; LinkedIn APIs</p>
+<div class="absolute top-6 right-6"><button class="flex items-center gap-1 px-3 py-1.5 text-xs font-medium text-primary hover:bg-secondary rounded-md transition-colors">View Details <span class="material-symbols-outlined text-[16px]">open_in_new</span></button></div></div>
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-gray-50 border-b border-outline/50">
+<th class="px-6 py-3 text-xs font-bold text-gray-500 uppercase tracking-wider">Data Point</th>
+<th class="px-6 py-3 text-xs font-bold text-gray-500 uppercase tracking-wider">Source A (Resume)</th>
+<th class="px-6 py-3 text-xs font-bold text-gray-500 uppercase tracking-wider">Source B (Digital)</th>
+<th class="px-6 py-3 text-xs font-bold text-gray-500 uppercase tracking-wider text-right">Confidence</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline/30 text-sm">
+<tr class="hover:bg-blue-50/30 transition-colors">
+<td class="px-6 py-4 font-medium text-gray-900">Current Role</td>
+<td class="px-6 py-4 text-gray-600">Senior FE Engineer</td>
+<td class="px-6 py-4 text-gray-600 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm text-[#0077b5]">work</span>
+                                    Senior Software Eng.
+                                </td>
+<td class="px-6 py-4 text-right">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-green-100 text-green-800">
+                                        98%
+                                    </span>
+</td>
+</tr>
+<tr class="hover:bg-blue-50/30 transition-colors">
+<td class="px-6 py-4 font-medium text-gray-900">Education</td>
+<td class="px-6 py-4 text-gray-600">BS CS, Stanford</td>
+<td class="px-6 py-4 text-gray-600 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm text-[#0077b5]">school</span>
+                                    BS Computer Science
+                                </td>
+<td class="px-6 py-4 text-right">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-green-100 text-green-800">
+                                        100%
+                                    </span>
+</td>
+</tr>
+<tr class="hover:bg-blue-50/30 transition-colors">
+<td class="px-6 py-4 font-medium text-gray-900">Tech Stack</td>
+<td class="px-6 py-4 text-gray-600">React, TypeScript</td>
+<td class="px-6 py-4 text-gray-600 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm text-gray-800">code</span>
+                                    ts, js, react
+                                </td>
+<td class="px-6 py-4 text-right">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-yellow-100 text-yellow-800">
+                                        92%
+                                    </span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="bg-surface rounded-card p-6 shadow-elevation-1 border border-outline/50">
+<div class="flex items-center gap-3 mb-4 w-full">
+<div class="p-2 bg-purple-50 text-purple-700 rounded-lg">
+<span class="material-symbols-outlined">psychology</span>
+</div>
+<h3 class="text-base font-sans font-medium text-gray-900">Product Mindset</h3>
+<button class="ml-auto flex items-center gap-1 px-2 py-1 text-xs font-medium text-primary hover:bg-secondary rounded-md transition-colors">View Details <span class="material-symbols-outlined text-[14px]">open_in_new</span></button></div>
+<div class="space-y-4">
+<div>
+<div class="flex justify-between text-xs mb-1">
+<span class="text-gray-600">Documentation Quality</span>
+<span class="font-bold text-gray-900">Excellent</span>
+</div>
+<div class="w-full bg-gray-100 rounded-full h-1.5">
+<div class="bg-purple-600 h-1.5 rounded-full" style="width: 90%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-xs mb-1">
+<span class="text-gray-600">User-Centric Commits</span>
+<span class="font-bold text-gray-900">Good</span>
+</div>
+<div class="w-full bg-gray-100 rounded-full h-1.5">
+<div class="bg-purple-400 h-1.5 rounded-full" style="width: 75%"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-surface rounded-card p-6 shadow-elevation-1 border border-outline/50">
+<div class="flex items-center gap-3 mb-4 w-full">
+<div class="p-2 bg-indigo-50 text-indigo-700 rounded-lg">
+<span class="material-symbols-outlined">fingerprint</span>
+</div>
+<h3 class="text-base font-sans font-medium text-gray-900">Digital Footprint</h3>
+<button class="ml-auto flex items-center gap-1 px-2 py-1 text-xs font-medium text-primary hover:bg-secondary rounded-md transition-colors">View Details <span class="material-symbols-outlined text-[14px]">open_in_new</span></button></div>
+<div class="flex items-center justify-between py-2 border-b border-dashed border-outline/50">
+<span class="text-xs text-gray-500">First Seen</span>
+<span class="text-sm font-mono text-gray-900">Oct 12, 2015</span>
+</div>
+<div class="flex items-center justify-between py-2 border-b border-dashed border-outline/50">
+<span class="text-xs text-gray-500">Maturity Scale</span>
+<span class="text-sm font-bold text-indigo-600">Level 4/5</span>
+</div>
+<div class="flex items-center justify-between py-2">
+<span class="text-xs text-gray-500">Reputation Score</span>
+<span class="text-sm font-mono text-gray-900">4,520 pts</span>
+</div>
+</div>
+</div>
+<div class="bg-surface rounded-card p-6 shadow-elevation-2 border border-primary/30 relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-primary"></div>
+<div class="flex flex-col md:flex-row gap-6 items-start md:items-center justify-between">
+<div class="flex-1">
+<h3 class="text-lg font-sans font-bold text-gray-900 mb-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">recommend</span>
+                                Final Recommendation
+                            </h3>
+<p class="text-sm text-gray-600 leading-relaxed max-w-2xl">
+                                Candidate <strong class="text-gray-900">Alex Mercer</strong> demonstrates exceptional technical consistency and a verifiable history of high-impact contributions. Despite minor risk signals regarding email age, the overall profile authenticity is in the <strong class="text-primary">98th percentile</strong>.
+                            </p>
+</div>
+<div class="flex items-center gap-3 shrink-0">
+<button class="px-5 py-2.5 rounded-lg border border-outline text-gray-700 font-medium text-sm hover:bg-gray-50 transition-colors">
+                                Flag for Review
+                            </button>
+<button class="px-5 py-2.5 rounded-lg bg-primary text-white font-medium text-sm hover:bg-primary-dark shadow-md transition-all transform hover:-translate-y-0.5">
+                                Proceed to Interview
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>
