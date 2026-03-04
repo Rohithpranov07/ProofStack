@@ -1344,11 +1344,7 @@ RECRUITER OUTPUT: Ranked shortlist + interview questions + calendar invites
 
 ---
 
-## 📄 License
 
-MIT License — see [LICENSE](./LICENSE) for details.
-
----
 
 <div align="center">
 
