@@ -365,6 +365,155 @@ LeetCode GraphQL API → No official limit (unofficial API)
 Redis caching ensures that a previously analyzed candidate costs 0 API calls on re-analysis within the cache window — enabling bulk analysis without quota exhaustion.
 
 ---
+## 📸 Screenshots
+
+> **Setup:** Add the `screenshots/` folder to your repo root. All paths below resolve automatically.
+
+---
+
+### 🏠 Landing Page — Hero
+
+<p align="center">
+  <img src="./ProofStack Screenshots/Landing_hero.png" alt="ProofStack Hero — Résumés describe intent. Evidence proves reality." width="100%" />
+</p>
+<p align="center"><em>"Résumés describe intent. Evidence proves reality." — PST score card with live skill rankings</em></p>
+
+---
+
+### ⚙️ Verification Engines Overview
+
+<p align="center">
+  <img src="./ProofStack Screenshots/Landing_des.png" alt="10 cross-validating verification engines" width="100%" />
+</p>
+<p align="center"><em>10 cross-validating engines built on GitHub REST v3, LeetCode GraphQL, StackOverflow API & LinkedIn HTTP — deterministic, auditable scoring</em></p>
+
+---
+
+### 🔢 How It Works — All 10 Engines
+
+<p align="center">
+  <img src="./ProofStack Screenshots/Landing_how_it_works.png" alt="How It Works — 10 Engine Pipeline" width="100%" />
+</p>
+<p align="center"><em>10 engines execute sequentially, each feeding cross-validation signals to the next — one shared GitHub fetch, zero duplicate API calls</em></p>
+
+---
+
+### 📝 Input Wizard — Step 1: Profiles & Links
+
+<p align="center">
+  <img src="./ProofStack Screenshots/Profile and links.png" alt="Step 1 — Profiles and Links Input" width="85%" />
+</p>
+<p align="center"><em>Step 1 of 4 — GitHub username (required), LeetCode/HackerRank, LinkedIn URL, target role level, and portfolio links</em></p>
+
+---
+
+### 📄 Input Wizard — Step 2: Resume & Skills
+
+<p align="center">
+  <img src="./ProofStack Screenshots/Resume and skills.png" alt="Step 2 — Resume Upload and Skills" width="85%" />
+</p>
+<p align="center"><em>Step 2 of 4 — PDF/DOCX resume upload with AI-powered skill parsing; manually tag top technical skills with years of experience</em></p>
+
+---
+
+### 💼 Input Wizard — Step 3: Professional Experience
+
+<p align="center">
+  <img src="./ProofStack Screenshots/Professional Exp.png" alt="Step 3 — Professional Experience" width="85%" />
+</p>
+<p align="center"><em>Step 3 of 4 — Work history, role titles, and project highlights; AI analyzes career progression and technical complexity</em></p>
+
+---
+
+### ✅ Input Wizard — Step 4: Review & Submit
+
+<p align="center">
+  <img src="./ProofStack Screenshots/Review page.png" alt="Step 4 — Review Summary before Analysis" width="85%" />
+</p>
+<p align="center"><em>Step 4 of 4 — Review all gathered data before triggering analysis; consent & authorization confirmation; estimated ~2 min runtime</em></p>
+
+---
+
+### ⚡ Live Analysis Progress
+
+<p align="center">
+  <img src="./ProofStack Screenshots/Analyse page.png" alt="Live Analysis Progress — All Steps Done" width="80%" />
+</p>
+<p align="center"><em>Real-time step-by-step progress: profile fetch → resume parsing → cross-validation (Engines 1–4) → PST score computation → final report</em></p>
+
+---
+
+### 📊 Main Dashboard — PST Score & Risk Signals
+
+<p align="center">
+  <img src="./ProofStack Screenshots/Dashboard_1.png" alt="Main Dashboard — Global Trust Score and Risk Signals" width="100%" />
+</p>
+<p align="center"><em>Global Trust Score radar chart (54/100 MODERATE) with per-dimension scores, 2 detected risk signals, Code Authenticity timeline, and Profile Consistency matrix</em></p>
+
+---
+
+### 📊 Main Dashboard — Problem Solving, Product Mindset & Final Recommendation
+
+<p align="center">
+  <img src="./ProofStack Screenshots/Dashboard_2.png" alt="Main Dashboard — Problem Solving and Final Recommendation" width="100%" />
+</p>
+<p align="center"><em>LeetCode breakdown (1,281 solved · Rank #11,516), Product Mindset scores, Digital Footprint, Resume Intelligence — with "Proceed to Interview" or "Flag for Review" decision</em></p>
+
+---
+
+### 🔬 Engine Deep Dive — Code Authenticity
+
+<p align="center">
+  <img src="./ProofStack Screenshots/Code auth.png" alt="Code Authenticity Engine — Commit Timeline and Anomaly Detection" width="100%" />
+</p>
+<p align="center"><em>Commit Activity Timeline (Human vs AI-Suggested), Commit Pattern Analysis table, and Advanced Anomaly Detection — LOC anomaly ratio, Interval CV, entropy level, and AI synthesis risk</em></p>
+
+---
+
+### 🔗 Engine Deep Dive — Profile Consistency
+
+<p align="center">
+  <img src="./ProofStack Screenshots/Profile Consistency.png" alt="Profile Consistency — Identity Verification Matrix" width="100%" />
+</p>
+<p align="center"><em>Identity Verification Matrix: 9 technical skills claimed → 8 verified in repos (89%), 1 listed project → 0 found on GitHub (0%), experience timeline 50% corroborated, LinkedIn 100% verified</em></p>
+
+---
+
+### 🧠 Engine Deep Dive — Problem-Solving Intelligence
+
+<p align="center">
+  <img src="./ProofStack Screenshots/Leetcode.png" alt="Problem-Solving Intelligence — LeetCode Analysis" width="100%" />
+</p>
+<p align="center"><em>1,281 total solved (350 Easy · 680 Medium · 251 Hard), Acceptance Rate 1.0%, Global Rank #11,516 — Archetype: Advanced Problem Solver · VERIFIED</em></p>
+
+---
+
+### 🌐 Engine Deep Dive — Digital Footprint
+
+<p align="center">
+  <img src="./ProofStack Screenshots/Digital Footprint.png" alt="Digital Footprint Analysis" width="100%" />
+</p>
+<p align="center"><em>StackOverflow reputation, merged PRs, GitHub stars across 12 repos, blog presence — Digital Footprint Maturity scale (Ghost → Passive → Active → Visible → Authority)</em></p>
+
+---
+
+### 🚀 Engine Deep Dive — Product Mindset
+
+<p align="center">
+  <img src="./ProofStack Screenshots/Product Mindset.png" alt="Product Mindset Engine — Originality and Impact" width="100%" />
+</p>
+<p align="center"><em>Problem Statement Detection, Impact Metrics Clarity, Deployment Evidence, Originality Score (100%), Maintenance Recency — plus AI-Generated Narrative (Gemini 2.5) qualitative evaluation</em></p>
+
+---
+
+### 📋 Engine Deep Dive — ATS Resume Intelligence
+
+<p align="center">
+  <img src="./ProofStack Screenshots/Resume report.png" alt="ATS Resume Intelligence Report" width="100%" />
+</p>
+<p align="center"><em>ATS Score 46/100 — Structure Quality 49.3, Skill Authenticity 46.4, Career Consistency 78.0, Readability Good, Keyword Stuffing Risk Low — sub-score donuts with weighted breakdown</em></p>
+
+---
 
 ## 🧪 Live Demo Results — 3 Real Candidate Profiles
 
