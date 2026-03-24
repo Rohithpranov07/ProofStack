@@ -7,10 +7,6 @@ Intelligent Resume & Code Authenticity Verifier
 
 **_"Verify First. Hire Right. Every Time."_**
 
-[![Team ID](https://img.shields.io/badge/Team%20ID-PS100059-blue?style=for-the-badge)](https://github.com/Rohithpranov07/sentryx)
-[![Hackathon](https://img.shields.io/badge/AI4Dev%20'26-Hackathon-teal?style=for-the-badge)]()
-[![College](https://img.shields.io/badge/PSG%20College%20of%20Technology-red?style=for-the-badge)]()
-
 
 [![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)
 [![Next.js](https://img.shields.io/badge/Next.js%2014-000000?style=flat-square&logo=next.js&logoColor=white)](https://nextjs.org)
@@ -1331,25 +1327,3 @@ RECRUITER OUTPUT: Ranked shortlist + interview questions + calendar invites
 
 ---
 
-## 👥 Team
-
-**ProofStack** — Built at AI4Dev '26 Hackathon
-
-| | |
-|--|--|
-| **Team ID** | PS100059 |
-| **Institution** | PSG College of Technology, Coimbatore |
-| **GitHub** | [github.com/Rohithpranov07/ProofStack](https://github.com/Rohithpranov07/ProofStack) |
-| **Domain** |Responsible AI and Resource Optimization|
-
----
-
-
-
-<div align="center">
-
-**ProofStack** — *Verify First. Hire Right. Every Time.*
-
-*Built for the age of AI-assisted everything.*
-
-</div>
