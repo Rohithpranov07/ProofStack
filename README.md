@@ -363,7 +363,7 @@ Redis caching ensures that a previously analyzed candidate costs 0 API calls on 
 ---
 ## 📸 Screenshots
 
-> **Setup:** Add the `screenshots/` folder to your repo root. All paths below resolve automatically.
+
 
 ---
 
